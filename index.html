@@ -70,11 +70,13 @@ html {
       z-index: 1;
     }
     
-
-    .texto{
-        position: relative;
-        bottom: -350px;
-        left: 50%;
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
     }
 
     /* ANIMAÇÕES */
@@ -91,7 +93,7 @@ html {
         opacity: 1;
       }
     }
-
+    
     @keyframes fadeIn {
   from {
     opacity: 0; /* Começa invisível */
@@ -111,19 +113,68 @@ html {
   font-size: 2rem;
 }
 
-#section2 {
-  margin-top: 150px;
-  flex-direction:initial;
-  display: flex;    
-}
 
-.hero {
+.segunda-section {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  position: relative;
+  padding: 40px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* --- NOVAS ANIMAÇÕES --- */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- .Segunda imagem COM ENTRADA SUAVE DA ESQUERDA --- */
+.about-img {
+  opacity: 0;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  animation: fadeInLeft 5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* --- .text COM ENTRADA SUAVE DA DIREITA --- */
+.text {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 500px;
+
+  opacity: 0;
+  animation: fadeInRight 5s ease forwards;
+  animation-delay: 0.5s;
 }
   </style>
 </head>
@@ -137,11 +188,16 @@ html {
       <img src="RoS_Harribel.webp" alt="Tier Harribel" class="personagem-img">
   </div>
 </SECtion>
-<section id="section2" class="section2"> 
-  <H4>
-    Tier Harribel é uma Arrancar e antiga Terceira Espada no exército de Sōsuke Aizen até a derrota do mesmo. 
-    Algum tempo depois da derrota de Aizen, ela se tornou a governante de Hueco Mundo.
-  </H4>
+
+<section class="segunda-section">
+  <div class="about-container">
+    <img src="41c09b4de25d10eb559241dc8534f72491da4427.png" alt="Tier Harribel" class="about-img">
+    <p class="text">
+      Tier Harribel é uma Arrancar
+      e antiga Terceira Espada no exército de Sōsuke Aizen até a derrota do mesmo.<br>
+      Algum tempo depois da derrota de Aizen, ela se tornou a governante de Hueco Mundo.
+    </p>
+  </div>
 </section>
 
 </body>
